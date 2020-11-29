@@ -2,6 +2,44 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #e8e8e8;
+}
+
+/*
+    **HEADER
+*/
+
+.header {
+    width: 100%;
+    height: auto;
+    max-height: 80px;
+    background-color: #30475e;
+    color: #ffffff;
+    padding: 20px 40px;
+}
+
+.nav {
+    width: 100%;
+    height: auto;
+    /*flex-box*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav ul li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #ffffff;
 }
 
 .container {
@@ -62,7 +100,7 @@
     grid-template-rows: 37.5% 12.5% 12.5% 37.5%;
 }
 
-.part-container{
+.part-container {
     width: 100%;
     height: 100%;
     position: relative;
@@ -107,8 +145,8 @@
 .doorway {
     width: 100%;
     height: 100%;
-    background-color: yellow;
     position: relative;
+    background-color: #ffffff;
 }
 
 .dw-bathroom {
@@ -171,4 +209,66 @@
 
 .l-living_room {
     display: block;
+}
+
+/*
+    **FOOTER
+
+*/
+
+.footer {
+    width: 100%;
+    height: 150px;
+    /* background-color: #30475e; */
+    background: rgb(48, 71, 94);
+    background: radial-gradient(
+        circle,
+        rgba(48, 71, 94, 1) 16%,
+        rgba(34, 40, 49, 1) 93%
+    );
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    position: sticky;
+}
+
+.mary-container {
+    width: 100%;
+    height: 100%;
+    /* background-color: #00ffea; */
+    /* flex-box */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.pulse-mary {
+    animation: pulse-animation 1.5s infinite;
+    /* pulse-animation 2s infinite; */
+}
+
+.mary {
+    width: 70px;
+    height: 70px;
+    background-color: #f05454;
+    border-radius: 50%;
+    /* box-shadow: 0 0 0 rgba(240, 84, 84,0.7); */
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(240, 84, 84, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(240, 84, 84, 0);
+    }
+}
+
+.mary-content {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font-size: 17px;
+    color: #ffffff;
 }
