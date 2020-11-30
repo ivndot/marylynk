@@ -9,45 +9,61 @@
     <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <title>Marylynk</title>
+    <title>MaryLynk</title>
 </head>
 
 <body>
 
     <header class="header">
         <nav class="nav">
-            <h2>Marylynk</h2>
+            <h2>MaryLynk</h2>
             <ul>
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Como funciona</a></li>
             </ul>
         </nav>
     </header>
+
+    <div class="content">
+        <h3>Comandos</h3>
+        <p>Los siguientes comandos se pueden utilizar para manipular
+            los objetos IoT.
+        </p>
+        <h4>Puertas</h4>
+        <ul>
+            <li><b>Mary</b> open <b>|</b> close the door kitchen <b>|</b> bedroom <b>|</b> bathroom</li>
+        </ul>
+        <h4>Luces</h4>
+        <ul>
+            <li><b>Mary</b> turn on <b>|</b> turn off lights kitchen <b>|</b> bedroom <b>|</b> bathroom <b>|</b> living room <b>|</b> dining room</li>
+        </ul>
+    </div>
+
     <div class="house_map-container">
 
         <div class="bathroom-container part-container">
             <div class="layer l-bathroom"></div>
-            <img class="img-test" src="./test.jpg" alt="" width="450" height="225">
+            <img class="img-test" src="./img/banio.png" alt="" width="450" height="225">
         </div>
 
         <div class="dining_room-container part-container">
             <div class="layer l-dining_room"></div>
-            <img class="img-test" src="./test.jpg" alt="" width="450" height="225">
+            <img class="img-test" src="./img/comedor.png" alt="" width="450" height="225">
         </div>
 
         <div class="kitchen_room-container part-container">
             <div class="layer l-kitchen"></div>
-            <img class="img-test" src="./test.jpg" alt="" width="450" height="150">
+            <img class="img-test" src="./img/cocina.png" alt="" width="450" height="150">
         </div>
 
         <div class="bedroom-container part-container">
             <div class="layer l-bedroom"></div>
-            <img class="img-test" src="./test.jpg" alt="" width="450" height="225">
+            <img class="img-test" src="./img/cuarto.png" alt="" width="450" height="225">
         </div>
 
         <div class="living_room-container part-container">
             <div class="layer l-living_room"></div>
-            <img class="img-test" src="./test.jpg" alt="" width="450" height="300">
+            <img class="img-test" src="./img/sala1.png" alt="" width="450" height="300">
         </div>
 
         <!--PASILLOS-->
@@ -65,13 +81,15 @@
             <div id="d-bedroom" class="door"></div>
         </div>
 
+        <div class="doorway dw-livingroom"></div>
+
 
     </div>
 
     <footer class="footer">
         <div class="mary-container">
             <div class="mary"></div>
-            <div class="mary-content">¡Hola!</div>
+            <div class="mary-content">¡Hola!, presióname para comenzar</div>
         </div>
     </footer>
 

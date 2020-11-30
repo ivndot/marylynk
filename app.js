@@ -26,7 +26,7 @@ var grammar =
     "#JSGF V1.0;" /*cabecera, se define la version de jspeech grammat format */ +
     "grammar test;" /*nombre de la gramatica -action-*/ +
     //definiendo gramatica pulica
-    "public <action> = ((turn on |turn off ) (lights |TV ) (bathroom|bedroom|kitchen|living room|dining room))|(open|close) the door (kitchen|bedroom|bathroom)"; //se convierte el arreglo en un string separado por |
+    "public <action> = ((turn on |turn off ) (lights) (bathroom|bedroom|kitchen|living room|dining room))|(open|close) the door (kitchen|bedroom|bathroom)"; //se convierte el arreglo en un string separado por |
 
 //obejto speech recognition
 var recognition = new SpeechRecognition();
@@ -49,6 +49,7 @@ mary.addEventListener("click", (e) => {
         .getUserMedia({ audio: true })
         .then(function (stream) {
             recognition.start();
+            res.innerHTML = "Dime, ¿qué quieres que haga?";
         })
         .catch(function (err) {
             message.innerHTML =
@@ -65,8 +66,8 @@ recognition.addEventListener("result", (event) => {
         //message.innerHTML = action;
         console.log(event.results);
         //definicion de regex
-        const command = /mary|Mary/;
-        const expression = /((turn on|turn off)\s(lights|TV)\s(bathroom|bedroom|kitchen|living room|dining room))|(open|close)\sthe\sdoor\s(kitchen|bedroom|bathroom)/;
+        const command = /mary/i;
+        const expression = /((turn\s(on|off))\s(lights)\s(bathroom|bedroom|kitchen|living room|dining room))|(open|close)\sthe\sdoor\s(kitchen|bedroom|bathroom)/i;
         maryAsistance(action, command, expression);
     }
 });
@@ -88,7 +89,7 @@ function maryAsistance(action, command, expression) {
         mary.classList.add("pulse-mary");
         console.log(action);
         isMary = true;
-        res.innerHTML="Estoy escuchando...";
+        res.innerHTML = "Estoy escuchando...";
     } else {
         //se dijo el commando mary anteriormente
         if (isMary) {
@@ -180,8 +181,3 @@ function maryAsistance(action, command, expression) {
         }
     }
 }
-
-/*mary2.addEventListener("click", () => {
-    console.log("click");
-    mary2.classList.add("pulse-mary");
-});*/
