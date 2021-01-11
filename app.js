@@ -42,19 +42,25 @@ recognition.interimResults = true;
 recognition.maxAlternatives = 1;
 
 //empieza el reconocimiento con el button
+let x = false;
 mary.addEventListener("click", (e) => {
-    console.log(e);
-    //permisos de captura de audio
-    navigator.mediaDevices
-        .getUserMedia({ audio: true })
-        .then(function (stream) {
-            recognition.start();
-            res.innerHTML = "Dime, ¿qué quieres que haga?";
-        })
-        .catch(function (err) {
-            message.innerHTML =
-                "No puedo usar el micrófono, dáme permisos para que funcione!";
-        });
+    
+    if (!x) {
+        console.log(e);
+        //permisos de captura de audio
+        navigator.mediaDevices
+            .getUserMedia({ audio: true })
+            .then(function (stream) {
+                x = true;
+                recognition.start();
+                res.innerHTML = "Dime, ¿qué quieres que haga?";
+            })
+            .catch(function (err) {
+                res.innerHTML =
+                    "No puedo usar el micrófono, dame permisos para que funcione!";
+                console.log(err);
+            });
+    }
 });
 
 recognition.addEventListener("result", (event) => {
